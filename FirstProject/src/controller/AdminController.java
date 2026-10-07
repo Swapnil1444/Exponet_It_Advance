@@ -1,0 +1,31 @@
+package controller;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import model.Student;
+
+public class AdminController {
+
+	public static void main(String[] args) {
+
+		Configuration cf = new Configuration().configure("HibernateConfiction.xml");
+		SessionFactory sf = cf.buildSessionFactory();
+		Session s = sf.openSession();
+		Transaction tx=s.beginTransaction();
+		
+		Student stud=new Student();
+		stud.setId(101);
+		stud.setMoblieNo(9309144435l);
+		stud.setName("swapnil Supekar");
+		stud.setAge(20);
+		
+		s.save(stud);
+		tx.commit();
+		System.out.println("add data");
+
+	}
+
+}
