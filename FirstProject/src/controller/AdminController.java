@@ -16,15 +16,25 @@ public class AdminController {
 		Session s = sf.openSession();
 		Transaction tx=s.beginTransaction();
 		
-		Student stud=new Student();
-		stud.setId(101);
-		stud.setMoblieNo(9309144435l);
-		stud.setName("swapnil Supekar");
-		stud.setAge(20);
+		System.out.println("Student Information: "+s.get(Student.class,101));
 		
-		s.save(stud);
+		Student stud=s.get(Student.class,101);
+		stud.setId(101);
+		stud.setMoblieNo(9309144437l);
+		stud.setName("jay");
+		stud.setAge(21);
+		
+		s.saveOrUpdate(stud);
 		tx.commit();
-		System.out.println("add data");
+		System.out.println("Update data");
+		
+		System.out.println("Student Information: "+s.get(Student.class,101));
+		
+		s.delete(stud);
+		System.out.println("delate rocord...!");
+		
+		
+	
 
 	}
 

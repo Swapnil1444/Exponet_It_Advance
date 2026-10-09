@@ -17,5 +17,4 @@
 		<mapping class="model.Student"/> 
 	</session-factory>
 
-
 </hibernate-configuration>

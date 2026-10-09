@@ -36,6 +36,10 @@ public class Student {
 	public void setMoblieNo(long moblieNo) {
 		this.moblieNo = moblieNo;
 	}
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", age=" + age + ", moblieNo=" + moblieNo + "]";
+	}
 	
 	
 
