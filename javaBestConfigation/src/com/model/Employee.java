@@ -8,15 +8,26 @@ import javax.persistence.Id;
 
 @Entity
 public class Employee {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column(name="Emp_name" ,nullable = false)
 	private String name;
 	private String dept;
+	
 	public int getId() {
 		return id;
+	}
+	
+	public Employee(int id, String name, String dept) {
+		this.id = id;
+		this.name = name;
+		this.dept = dept;
+	}
+
+	public Employee(String name, String dept) {
+		this.name = name;
+		this.dept = dept;
 	}
 	
 	public Employee() {
@@ -41,11 +52,7 @@ public class Employee {
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", dept=" + dept + "]";
 	}
-	public Employee(int id, String name, String dept) {
-		this.id = id;
-		this.name = name;
-		this.dept = dept;
-	}
+	
 	
 	
 	
