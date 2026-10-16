@@ -5,49 +5,70 @@ import com.util.InputValidationUtil;
 
 public class UserMenu {
 
-	UserService service = new UserService();
+    private final UserService service = new UserService();
 
-	public void show() {
+    public void show() {
 
-		boolean flge = true;
-		while (flge) {
-			System.out.println("======================================");
-			System.out.println("            User mng System    ".toUpperCase());
-			System.out.println("======================================");
+        boolean flag = true;
 
-			System.out.println(" 1.insert \n 2.Update \n 3.Get User \n 4.Delete \n 5.get all User \n 6.Search User Bye name  \n 0.Exit");
-			System.out.println("--------------------------------------");
-			int key = InputValidationUtil.inputInt("Select Option:");
-			System.out.println("--------------------------------------");
-			switch (key) {
-			case 1:
-				service.inserUser();
-				break;
-			case 2:
-				service.updateUser();
-				break;
-			case 3:
-				service.getUser();
-				break;
-			case 4:
-				service.deleteUser();
-				break;
-			case 5:
-				service.getAllUser();
-				break;
-				
-			case 6:
-				service.getUserByName();
-				break;
-			case 0:
-				flge = false;
-				System.out.println("Exit..!");
-				break;
-			default:
-				System.out.println("Invaid Input..!");
-				break;
-			}
-		}
-	}
+        while (flag) {
 
+            displayMenu();
+
+            int key = InputValidationUtil.inputInt("Select Option: ");
+
+            switch (key) {
+
+            case 1:
+                service.inserUser();
+                break;
+
+            case 2:
+                service.updateUser();
+                break;
+
+            case 3:
+                service.getUser();
+                break;
+
+            case 4:
+                service.deleteUser();
+                break;
+
+            case 5:
+                service.getAllUser();
+                break;
+
+            case 6:
+                service.getUserByName();
+                break;
+
+            case 0:
+                flag = false;
+                System.out.println("\nThank you for using User Management System!");
+                System.out.println("Application closed successfully.");
+                break;
+
+            default:
+                System.out.println("\nInvalid option! Please select from 0 to 6.");
+                break;
+            }
+        }
+    }
+
+    private void displayMenu() {
+
+        System.out.println("\n");
+        System.out.println("==============================================");
+        System.out.println("          USER MANAGEMENT SYSTEM");
+        System.out.println("==============================================");
+        System.out.println("  1. Insert User");
+        System.out.println("  2. Update User");
+        System.out.println("  3. Get User By ID");
+        System.out.println("  4. Delete User");
+        System.out.println("  5. Display All Users");
+        System.out.println("  6. Search User By Name");
+        System.out.println("  0. Exit");
+        System.out.println("----------------------------------------------");
+    }
 }
