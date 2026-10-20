@@ -26,7 +26,10 @@ public class Subject {
 	}
 	@Override
 	public String toString() {
-		return "Subject [id=" + id + ", name=" + name + "]";
+	    return "{"
+	            + "\"subjectId\": " + id + ", "
+	            + "\"name\": \"" + name + "\""
+	            + "}";
 	}
 	
 	

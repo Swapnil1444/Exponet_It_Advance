@@ -6,6 +6,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,7 +28,7 @@ public class Student {
 	private int age;
 	private String address;
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL ,fetch = FetchType.EAGER)
 	@JoinTable(name = "Student_Subject",joinColumns = @JoinColumn(name ="Stude_Id"),inverseJoinColumns = @JoinColumn(name="Sub_Id"))
 	List<Subject> subList;
 
@@ -102,10 +103,18 @@ public class Student {
 	}
 
 
+
 	@Override
 	public String toString() {
-		return "Student [sId=" + sId + ", name=" + name + ", phoneNo=" + phoneNo + ", gender=" + gender + ", age=" + age
-				+ ", address=" + address + ", subList=" + subList + "]";
+	    return "{\n"
+	            + "  \"sId\": " + sId + ",\n"
+	            + "  \"name\": \"" + name + "\",\n"
+	            + "  \"phoneNo\": \"" + phoneNo + "\",\n"
+	            + "  \"gender\": \"" + gender + "\",\n"
+	            + "  \"age\": " + age + ",\n"
+	            + "  \"address\": \"" + address + "\",\n"
+	            + "  \"subList\": " + subList + "\n"
+	            + "}";
 	}
 
 

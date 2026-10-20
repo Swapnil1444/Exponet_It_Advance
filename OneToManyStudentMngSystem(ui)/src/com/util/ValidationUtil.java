@@ -1,60 +1,89 @@
+
 package com.util;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-
 import com.model.Gender;
 
 public class ValidationUtil {
 
-	private static Scanner sc = new Scanner(System.in);
+    private static final Scanner sc = new Scanner(System.in);
 
-	public static int inputInt(String promt) {
+    // Integer input
+    public static int inputInt(String prompt) {
+        System.out.print(prompt);
+        String num = sc.next().trim();
 
-		System.out.print(promt);
-		String num = sc.next().trim();
-		if (Pattern.matches("[0-9]+", num)) {
-			return Integer.parseInt(num);
-		}
-		return inputInt("Error: Please " + promt);
-	}
+        if (Pattern.matches("[0-9]+", num)) {
+            try {
+                return Integer.parseInt(num);
+            } catch (NumberFormatException e) {
+                System.out.println("Number is too large. Try again.");
+            }
+        } else {
+            System.out.println("Invalid input! Enter numbers only.");
+        }
 
-	public static String inputString(String promt) {
-		System.out.print(promt);
-		String valuseString = sc.next().trim();
-		if (Pattern.matches("[a-zA-Z]+", valuseString)) {
-			return valuseString;
-		}
-		return inputString("Error: Please " + promt);
-	}
+        return inputInt(prompt);
+    }
 
-	public static String inputlongString(String promt) {
-		sc.nextLine();
-		System.out.print(promt);
-		String valuseString = sc.nextLine().trim();
-		return valuseString;
-	}
+    // String input: letters only
+    public static String inputString(String prompt) {
+        System.out.print(prompt);
+        String value = sc.next().trim();
 
-	public static Gender inputGendar(String promt) {
-		System.out.print(promt);
-		String valuse = sc.next().trim();
-		if (valuse.equalsIgnoreCase("male") || valuse.equalsIgnoreCase("female") || valuse.equalsIgnoreCase("other")) {
-			return Gender.valueOf(valuse.toUpperCase());
-		}
-		return inputGendar("Error: Please " + promt);
-	}
+        if (Pattern.matches("[a-zA-Z]+", value)) {
+            return value;
+        }
 
-	public static String inputPhoneNo(String promt) {
-		System.out.print(promt);
-		String valuse = sc.next().trim();
-		if (!Pattern.matches("[6-9]{1} [0-9][9]", valuse)) {
-			return valuse;
-		}
-		return inputPhoneNo("Error: Please " + promt);
-	}
+        System.out.println("Invalid input! Enter letters only.");
+        return inputString(prompt);
+    }
 
+    // Long string input: accepts spaces
+    public static String inputlongString(String prompt) {
+        System.out.print(prompt);
+
+        String value = sc.nextLine().trim();
+
+        // Handle a pending newline from nextInt()/next()
+        if (value.isEmpty()) {
+            value = sc.nextLine().trim();
+        }
+
+        if (!value.isEmpty()) {
+            return value;
+        }
+
+        System.out.println("Input cannot be empty.");
+        return inputlongString(prompt);
+    }
+
+    // Gender input
+    public static Gender inputGendar(String prompt) {
+        System.out.print(prompt);
+        String value = sc.next().trim();
+
+        try {
+            return Gender.valueOf(value.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Invalid gender! Enter Male, Female, or Other.");
+            return inputGendar(prompt);
+        }
+    }
+
+    // Indian mobile number validation
+    public static String inputPhoneNo(String prompt) {
+        System.out.print(prompt);
+        
+        String value = sc.next().trim();
+
+        if (Pattern.matches("[6-9][0-9]{9}", value)) {
+            return value;
+        }
+
+        System.out.println("Invalid mobile number! Enter a valid 10-digit number.");
+        return inputPhoneNo(prompt);
+    }
 }
