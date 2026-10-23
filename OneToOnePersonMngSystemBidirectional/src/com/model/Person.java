@@ -18,7 +18,7 @@ public class Person {
 
     private String pName;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
     @JoinColumn(name = "Adhar_Id")
     private Adhar adhar;
 

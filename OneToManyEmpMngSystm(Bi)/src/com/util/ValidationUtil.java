@@ -4,6 +4,7 @@ package com.util;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
+import com.model.Employee;
 import com.model.Gender;
 
 public class ValidationUtil {
@@ -86,4 +87,6 @@ public class ValidationUtil {
         System.out.println("Invalid mobile number! Enter a valid 10-digit number.");
         return inputPhoneNo(prompt);
     }
+
+	
 }

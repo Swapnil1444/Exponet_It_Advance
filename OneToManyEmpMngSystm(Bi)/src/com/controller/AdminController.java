@@ -49,7 +49,7 @@ public class AdminController {
 				break;
 
 			case 8:
-				service.deleleEmployeeAndAllEmp();
+				service.deleleDeptAndEmp();
 				break;
 
 			case 9:
@@ -72,6 +72,7 @@ public class AdminController {
 			default:
 				System.out.println("Invalid choice! Please try again.");
 			}
+			System.out.println("--------------------------------------");
 		}
 	}
 
@@ -87,7 +88,7 @@ public class AdminController {
 		System.out.println("5.  Update Employee");
 		System.out.println("6.  Update Department");
 		System.out.println("7.  Delete Employee Only");
-		System.out.println("8.  Delete Employee and Department");
+		System.out.println("8.  Delete Department And Employees");
 		System.out.println("9.  Delete Department Only");
 		System.out.println("10. Add Department to Existing Employee");
 		System.out.println("11. Add Employee to Existing Department");

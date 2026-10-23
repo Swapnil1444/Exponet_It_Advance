@@ -9,7 +9,7 @@ public interface EmployeeServices {
 	void updateEmp();
 	void updateDept();
 	void deleteEmployeeOnly();
-	void deleleEmployeeAndAllEmp();
+	void deleleDeptAndEmp();
 	void deleteDeptOnly();
 	void AddDeptToExistingEmp();
 	void AddEmpToExistingDept();

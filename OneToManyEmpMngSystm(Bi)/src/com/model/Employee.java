@@ -3,6 +3,7 @@ package com.model;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -18,11 +19,12 @@ public class Employee {
 	private String eName;
 	private String phoneNo;
 	private int age;
+	
 	@Enumerated(EnumType.STRING)
 	private Gender gender;
 	
-	@ManyToOne
-	@JoinColumn(name = "dept_Id")
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "dept_Id" )
 	private Deparment dept;
 
 	public int getEid() {
@@ -75,7 +77,7 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [eid=" + eid + ", eName=" + eName + ", phoneNo=" + phoneNo + ", age=" + age + ", gender="
+		return "\n Employee [ eid=" + eid + ", eName=" + eName + ", phoneNo=" + phoneNo + ", age=" + age + ", gender="
 				+ gender + "]";
 	}
 	
