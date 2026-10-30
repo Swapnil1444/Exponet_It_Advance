@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"https://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<bean id="emp" class="com.model.Employee" autowire="byName">
+		<property name="Empid" value="101"></property>
+		<property name="Empname" value="swapnil"></property>
+		<!-- <property name="Dept" ref="dept1"></property> -->
+	</bean>
+
+	<bean id="parmantAddress" class="com.model.Address">
+		<property name="id" value="101"></property>
+		<property name="address" value="pune"></property>
+
+	</bean>
+	<bean id="currentAddress" class="com.model.Address">
+	<property name="id" value="201"></property>
+	<property name="address" value="Anagar"></property>
+	</bean>
+
+	<bean id="dept" class="com.model.Department" autowire="byType">
+		<property name="Deptid" value="1"></property>
+		<property name="Deptname" value="HR"></property>
+	</bean>
+
+	<bean id="company" class="com.model.Company">
+		<property name="Compid" value="1"></property>
+		<property name="Compname" value="Google"></property>
+	</bean>
+</beans>

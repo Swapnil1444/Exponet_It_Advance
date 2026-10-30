@@ -1,0 +1,29 @@
+package com.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.entity.Department;
+import com.entity.Employee;
+
+@Configuration
+public class AppConfig {
+	
+	@Bean(name = "emp")
+	public Employee getEmployee() {
+		Employee emp=new Employee();
+		emp.setEid(101);
+		emp.setEname("swapnil");
+		emp.setDepartment();
+		return emp;
+	}
+	
+	@Bean(name="dept")
+	public Department getDept() {
+		Department d=new Department();
+		d.setDid(1);
+		d.setDname("HR");
+		return d;
+	}
+
+}

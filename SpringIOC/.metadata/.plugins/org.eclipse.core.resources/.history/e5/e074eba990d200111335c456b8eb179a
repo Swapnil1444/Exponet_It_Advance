@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"https://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="stud" class="com.model.Student">
+
+		<!-- <property name="id" value="1"></property> -->
+		<!-- <property name="name" value="jay"></property> -->
+		<!-- <property name="age" value="20"></property> -->
+		<!-- <property name="div" value="B"></property> -->
+		<!-- <property name="rollno" value="21"></property> -->
+		<!-- <property name="subjects"> -->
+
+		<!-- <set> -->
+		<!-- <value>Java</value> -->
+		<!-- <value>PY</value> -->
+		<!-- </set> -->
+		<!-- </property> -->
+
+
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="om"></constructor-arg>
+		<constructor-arg value="21"></constructor-arg>
+		<constructor-arg value="C"></constructor-arg>
+		<constructor-arg value="21"></constructor-arg>
+		<constructor-arg>
+			<set>
+				<value>Java</value>
+				<value>Py</value>
+			</set>
+		</constructor-arg>
+
+
+
+
+	</bean>
+</beans>

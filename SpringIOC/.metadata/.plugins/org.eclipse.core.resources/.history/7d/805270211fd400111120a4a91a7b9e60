@@ -1,0 +1,16 @@
+package com.config;
+
+import com.entity.Employee;
+
+public class AppConfig {
+	
+	public Employee getEmployee() {
+		Employee emp=new Employee();
+		emp.setEid(101);
+		emp.setEname("swapnil");
+		
+		
+		
+	}
+
+}

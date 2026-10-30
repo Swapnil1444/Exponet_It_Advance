@@ -1,0 +1,11 @@
+package com.config;
+
+import com.entity.Employee;
+
+public class AppConfig {
+	
+	public Employee getEmployee() {
+		
+	}
+
+}

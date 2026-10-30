@@ -1,0 +1,9 @@
+package com.entity;
+
+public class Department {
+	
+	private int did;
+	private String dname;
+	
+
+}

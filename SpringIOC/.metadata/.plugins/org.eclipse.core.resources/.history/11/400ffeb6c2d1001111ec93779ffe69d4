@@ -1,0 +1,11 @@
+package com;
+
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.Resource;
+
+public class ApplictionAdmin {
+	
+	Resource resource= 
+new  XmlBeanFactory();
+
+}

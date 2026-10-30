@@ -1,0 +1,10 @@
+package com.entity;
+
+public class Employee {
+	
+	
+	private int eid;
+	private int ename;
+	
+
+}

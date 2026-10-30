@@ -1,0 +1,9 @@
+package com;
+
+public class Employee {
+	
+	public void showHello() {
+		System.out.println("hello world");
+	}
+
+}

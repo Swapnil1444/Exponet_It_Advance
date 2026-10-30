@@ -1,0 +1,10 @@
+package com.entity;
+
+public class Address {
+	
+	private int aid;
+	private String aname;
+	
+	
+
+}

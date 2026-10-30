@@ -1,0 +1,13 @@
+package com.controller;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.config.AppConfig;
+
+public class Appliction {
+	
+	public static void main(String[] args) {
+		 new AnnotationConfigApplicationContext(AppConfig.class)
+	}
+
+}

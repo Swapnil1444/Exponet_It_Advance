@@ -1,0 +1,71 @@
+package com.model;
+
+import java.util.Set;
+
+public class Student {
+	
+	private int id;
+	private String name;
+	private int age;
+	private String div;
+	private int rollno;
+	
+	private Set<String> subjects;
+	
+	
+	
+	public Student(int id, String name, int age, String div, int rollno, Set<String> subjects) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.div = div;
+		this.rollno = rollno;
+		this.subjects = subjects;
+	}
+	public Set<String> getSubjects() {
+		return subjects;
+	}
+	public void setSubjects(Set<String> subjects) {
+		this.subjects = subjects;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public String getDiv() {
+		return div;
+	}
+	public void setDiv(String div) {
+		this.div = div;
+	}
+	public int getRollno() {
+		return rollno;
+	}
+	public void setRollno(int rollno) {
+		this.rollno = rollno;
+	}
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", age=" + age + ", div=" + div + ", rollno=" + rollno
+				+ ", subjects=" + subjects + "]";
+	}
+	
+	
+	
+
+}

@@ -1,0 +1,68 @@
+package com.entity;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+import com.entity.*;
+
+public class Employee {
+	
+	
+	private int eid;
+	private String ename;
+	
+	@Autowired
+	private Department department;
+	
+	@Autowired
+	@Qualifier(value = "parmantAddress")
+	private Address parmantAddress;
+	@Autowired
+	@Qualifier(value = )
+	private Address currentAddress;
+	
+	
+	
+	public Address getParmantAddress() {
+		return parmantAddress;
+	}
+	public void setParmantAddress(Address parmantAddress) {
+		this.parmantAddress = parmantAddress;
+	}
+	public Address getCurrentAddress() {
+		return currentAddress;
+	}
+	public void setCurrentAddress(Address currentAddress) {
+		this.currentAddress = currentAddress;
+	}
+	public int getEid() {
+		return eid;
+	}
+	public void setEid( int eid) {
+		this.eid = eid;
+	}
+	public String getEname() {
+		return ename;
+	}
+	public void setEname(String ename) {
+		this.ename = ename;
+	}
+	
+	
+	public Department getDepartment() {
+		return department;
+	}
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+	@Override
+	public String toString() {
+		return "Employee [eid=" + eid + ", ename=" + ename + ",\n  department=" + department + ",\n  parmantAddress="
+				+ parmantAddress + ",\n  currentAddress=" + currentAddress + "]";
+	}
+	
+	
+	
+	
+
+}

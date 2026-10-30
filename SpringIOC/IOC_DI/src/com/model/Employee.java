@@ -1,0 +1,48 @@
+package com.model;
+
+public class Employee {
+	
+	private int Empid;
+	private String Empname;
+	
+	private Address parmantAddress;
+	private Address currentAddress;
+	private Department dept;
+	public int getEmpid() {
+		return Empid;
+	}
+	public void setEmpid(int empid) {
+		Empid = empid;
+	}
+	public String getEmpname() {
+		return Empname;
+	}
+	public void setEmpname(String empname) {
+		Empname = empname;
+	}
+	public Address getParmantAddress() {
+		return parmantAddress;
+	}
+	public void setParmantAddress(Address parmantAddress) {
+		this.parmantAddress = parmantAddress;
+	}
+	public Address getCurrentAddress() {
+		return currentAddress;
+	}
+	public void setCurrentAddress(Address currentAddress) {
+		this.currentAddress = currentAddress;
+	}
+	public Department getDept() {
+		return dept;
+	}
+	public void setDept(Department dept) {
+		this.dept = dept;
+	}
+	@Override
+	public String toString() {
+		return "Employee \n [Empid=" + Empid + ", Empname=" + Empname + ",\n  parmantAddress=" + parmantAddress
+				+ ",\n  currentAddress=" + currentAddress + ",\n  dept=" + dept + "]";
+	}
+
+
+}
