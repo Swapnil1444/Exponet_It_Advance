@@ -22,6 +22,6 @@
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Qualifier"/>
 <fullyQualifiedTypeName name="com.entity.Address"/>
-<fullyQualifiedTypeName name="org.springframework.context.annotation.Primary"/>
 <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.Primary"/>
 </qualifiedTypeNameHistroy>

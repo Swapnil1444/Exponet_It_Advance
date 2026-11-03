@@ -20,8 +20,6 @@ public class AppConfig {
 		return emp;
 	}
 	
-	
-	
 	@Bean(name="dept")
 	public Department getDept() {
 		Department d=new Department();
