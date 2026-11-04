@@ -1,9 +1,0 @@
-package com;
-
-import org.springframework.beans.factory.xml.XmlBeanFactory;
-
-public class ApplictionAdmin {
-	
-	new XmlBeanFactory();
-
-}
