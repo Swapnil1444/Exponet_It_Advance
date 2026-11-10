@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="IOC_DI/src"/>
+	<classpathentry kind="src" path="IOCBeansScopeXmlBased/src"/>
+	<classpathentry kind="src" path="IOCJavaBestConfig/src"/>
+	<classpathentry kind="src" path="IOCXmlBastConfigration/src"/>
+	<classpathentry kind="lib" path="Spring_Jar/Spring_Jar/Spring Jar/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="Spring_Jar/Spring_Jar/Spring Jar/spring-aop-5.2.18.RELEASE.jar"/>
+	<classpathentry kind="lib" path="Spring_Jar/Spring_Jar/Spring Jar/spring-beans-5.2.18.RELEASE.jar"/>
+	<classpathentry kind="lib" path="Spring_Jar/Spring_Jar/Spring Jar/spring-context-5.2.18.RELEASE.jar"/>
+	<classpathentry kind="lib" path="Spring_Jar/Spring_Jar/Spring Jar/spring-core-5.2.18.RELEASE.jar"/>
+	<classpathentry kind="lib" path="Spring_Jar/Spring_Jar/Spring Jar/spring-expression-5.2.18.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Exponet_Advance/Exponet_It_Advance/SpringIOC/Spring_Jar/Spring_Jar/Spring Jar/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/Exponet_Advance/Exponet_It_Advance/SpringIOC/Spring_Jar/Spring_Jar/Spring Jar/spring-aop-5.2.18.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Exponet_Advance/Exponet_It_Advance/SpringIOC/Spring_Jar/Spring_Jar/Spring Jar/spring-beans-5.2.18.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Exponet_Advance/Exponet_It_Advance/SpringIOC/Spring_Jar/Spring_Jar/Spring Jar/spring-context-5.2.18.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Exponet_Advance/Exponet_It_Advance/SpringIOC/Spring_Jar/Spring_Jar/Spring Jar/spring-core-5.2.18.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Exponet_Advance/Exponet_It_Advance/SpringIOC/Spring_Jar/Spring_Jar/Spring Jar/spring-expression-5.2.18.RELEASE.jar"/>
+	<classpathentry kind="output" path="IOCBeansScopeXmlBased/bin"/>
+</classpath>
