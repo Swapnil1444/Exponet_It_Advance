@@ -13,6 +13,8 @@
 		Name:<input type="text" name="name"><br>
 		<br> PhoneNO:<input type="number" " name="phone"><br>
 		<br> Email:<input type="email" name="email"> <br>
+		<br>Username<input type="text" name="username"><br>
+		<br>Password<input type="password" name="password"><br>
 		<br>
 		<button value="submit">Create new Account</button>
 	</form>
