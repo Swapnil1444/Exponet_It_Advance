@@ -27,17 +27,24 @@ public class UserController {
 		return "Login";
 	}
 
-	@RequestMapping("login")
+	@RequestMapping("/login")
 	public String loginUser(@RequestParam String username, @RequestParam String password, Model model) {
 		// System.out.println("Login User: " + userService.Login(username, password));
 
 		try {
-			model.addAttribute("allEmployee", userService.getAllUserService(username, password));
+			model.addAttribute("allUser", userService.getAllUserService(username, password));
 			return "AdminPage";
 		} catch (RuntimeException e) {
-			model.addAttribute("msg",e.getMessage());
+			model.addAttribute("msg", e.getMessage());
 			return "errerPage";
 		}
 
 	}
+
+	@RequestMapping("/dashboard")
+	public String Dashboard(Model model) {
+		model.addAttribute("allUser", userService.getAllUsersService());
+		return "dashboard";
+	}
+
 }

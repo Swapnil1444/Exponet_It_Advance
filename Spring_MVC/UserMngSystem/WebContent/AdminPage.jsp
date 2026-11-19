@@ -75,7 +75,7 @@ h2 {
     <h3>All User Information</h3>
 
     <div class="employee-info">
-        ${allEmployee}
+        ${allUser}
     </div>
 
 </div>
