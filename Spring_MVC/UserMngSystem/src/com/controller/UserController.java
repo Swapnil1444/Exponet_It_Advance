@@ -47,4 +47,23 @@ public class UserController {
 		return "dashboard";
 	}
 
+	@RequestMapping("/delete")
+	public String deleteUser(@RequestParam("id") int id) {
+		userService.deleteUser(id);
+		return "redirect:/dashboard";
+	}
+	
+	@RequestMapping("/edit")
+	public String editUser(@RequestParam("id") int id ,Model model) {
+		 model.addAttribute("user",userService.getUser(id));
+		 return "edit";
+	}
+	
+	@RequestMapping("/update")
+	public String updateUser(@ModelAttribute User user) {
+		userService.updateUser(user);
+		return "redirect:/dashboard";
+	}
+	
+
 }

@@ -33,4 +33,28 @@ public class UserDAO {
 				.setParameter("user", username).setParameter("pass", password).getSingleResult();
 	}
 
+	
+	public  User getUserById(int id) {
+		return sf.openSession().get(User.class, id);
+	}
+	
+	public void deleteUser(int id) {
+		
+		Session session=sf.openSession();
+		org.hibernate.Transaction tx=	session.beginTransaction();
+		session.delete(getUserById(id));
+		tx.commit();
+		System.out.println(id+" delete record..!");
+		
+	}
+
+	public void updateUserInfo(User user) {
+		Session session=sf.openSession();
+		org.hibernate.Transaction tx=	session.beginTransaction();
+		session.update(user);
+		tx.commit();
+		System.out.println(user.getId()+" update record..!");
+		
+	}
+
 }

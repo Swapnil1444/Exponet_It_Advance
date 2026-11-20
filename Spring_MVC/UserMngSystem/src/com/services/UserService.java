@@ -46,4 +46,19 @@ public class UserService {
 		return userDao.getUserList();
 	}
 
+	public void deleteUser(int id) {
+		
+		userDao.deleteUser(id);
+	}
+
+	public User getUser(int id) {
+		return userDao.getUserById(id);
+		
+	}
+
+	public void updateUser(User user) {
+		userDao.updateUserInfo(user);
+		
+	}
+
 }
