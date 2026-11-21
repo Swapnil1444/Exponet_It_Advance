@@ -10,6 +10,10 @@
 <meta charset="UTF-8">
 <title>Admin Dashboard</title>
 
+<!-- Font Awesome Icons -->
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 <style>
 * {
     box-sizing: border-box;
@@ -17,7 +21,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #eef2f7;
+    background-color: #f1f5f9;
     margin: 0;
 }
 
@@ -33,54 +37,53 @@ body {
 
 .header h1 {
     margin: 0;
-    font-size: 25px;
+    font-size: 24px;
 }
 
-/* Logout */
+/* Logout Button */
 .logout {
-    color: white;
-    text-decoration: none;
     background-color: #dc2626;
+    color: white;
     padding: 10px 18px;
+    text-decoration: none;
     border-radius: 5px;
     font-size: 14px;
+    transition: 0.3s;
 }
 
 .logout:hover {
     background-color: #b91c1c;
 }
 
-/* Container */
+/* Main Container */
 .container {
     width: 90%;
     margin: 40px auto;
     background-color: white;
     padding: 25px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px #ccc;
+    box-shadow: 0 2px 10px #ddd;
 }
 
 h2 {
     color: #1e293b;
     margin-top: 0;
-    border-bottom: 2px solid #2563eb;
-    padding-bottom: 12px;
 }
 
-h3 {
-    color: #334155;
-    margin-bottom: 20px;
+.subtitle {
+    color: #64748b;
+    margin-bottom: 25px;
 }
 
 /* Table */
-.employee-info {
+.table-container {
+    width: 100%;
     overflow-x: auto;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    background-color: white;
     min-width: 750px;
 }
 
@@ -88,29 +91,35 @@ th {
     background-color: #2563eb;
     color: white;
     padding: 14px 10px;
+    text-align: center;
     font-size: 14px;
 }
 
 td {
-    padding: 12px 10px;
+    padding: 13px 10px;
     text-align: center;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #e2e8f0;
     color: #334155;
     font-size: 14px;
 }
 
 tr:hover {
-    background-color: #f1f5f9;
+    background-color: #f8fafc;
 }
 
-/* Buttons */
+/* Action Buttons */
 .btn {
     display: inline-block;
-    padding: 8px 15px;
+    padding: 8px 13px;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     font-size: 13px;
+    transition: 0.3s;
+}
+
+.btn i, .logout i {
+    margin-right: 5px;
 }
 
 .edit {
@@ -144,6 +153,10 @@ tr:hover {
         padding: 15px;
     }
 
+    .header {
+        padding: 15px;
+    }
+
     .header h1 {
         font-size: 19px;
     }
@@ -156,30 +169,42 @@ tr:hover {
 
     <!-- Header -->
     <div class="header">
-        <h1>User Management System</h1>
-        <a href="Login.jsp" class="logout">Logout</a>
+        <h1>
+            <i class="fa-solid fa-users"></i>
+            User Management System
+        </h1>
+
+        <a href="Login.jsp" class="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </a>
     </div>
 
-    <!-- Main Container -->
+    <!-- Main Content -->
     <div class="container">
 
-        <h2>Admin Dashboard</h2>
+        <h2>
+            <i class="fa-solid fa-gauge-high"></i>
+            Admin Dashboard
+        </h2>
 
-        <h3>All User Information</h3>
+        <p class="subtitle">
+            Manage and view all registered users.
+        </p>
 
-        <div class="employee-info">
+        <div class="table-container">
 
             <table>
 
                 <tr>
                     <th>ID</th>
-                    <th>NAME</th>
-                    <th>CONTACT NO</th>
-                    <th>EMAIL</th>
-                    <th>AGE</th>
-                    <th>USERNAME</th>
-                    <th>EDIT</th>
-                    <th>DELETE</th>
+                    <th>Name</th>
+                    <th>Contact No</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>Username</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
 
                 <%
@@ -199,16 +224,23 @@ tr:hover {
                     <td><%=user.getAge()%></td>
                     <td><%=user.getUsername()%></td>
 
+                    <!-- Edit Button -->
                     <td>
                         <a href="edit?id=<%=user.getId()%>"
-                           class="btn edit">Edit</a>
+                           class="btn edit">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            Edit
+                        </a>
                     </td>
 
+                    <!-- Delete Button -->
                     <td>
                         <a href="delete?id=<%=user.getId()%>"
                            class="btn delete"
                            onclick="return confirm('Are you sure you want to delete this user?');">
-                           Delete
+
+                            <i class="fa-solid fa-trash"></i>
+                            Delete
                         </a>
                     </td>
                 </tr>
@@ -219,7 +251,7 @@ tr:hover {
                 %>
 
                 <tr>
-                    <td colspan="8">No User Found!</td>
+                    <td colspan="8">No users found.</td>
                 </tr>
 
                 <%
@@ -234,7 +266,7 @@ tr:hover {
 
     <!-- Footer -->
     <div class="footer">
-        © 2026 User Management System
+        © 2026 User Management System. All Rights Reserved.
     </div>
 
 </body>

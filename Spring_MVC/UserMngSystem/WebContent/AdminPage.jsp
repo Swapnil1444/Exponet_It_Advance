@@ -10,6 +10,10 @@
 <meta charset="UTF-8">
 <title>Admin Dashboard</title>
 
+<!-- Font Awesome Icons -->
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 <style>
 * {
     box-sizing: border-box;
@@ -44,6 +48,7 @@ body {
     text-decoration: none;
     border-radius: 5px;
     font-size: 14px;
+    transition: 0.3s;
 }
 
 .logout:hover {
@@ -105,11 +110,16 @@ tr:hover {
 /* Action Buttons */
 .btn {
     display: inline-block;
-    padding: 7px 14px;
+    padding: 8px 13px;
     color: white;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 5px;
     font-size: 13px;
+    transition: 0.3s;
+}
+
+.btn i, .logout i {
+    margin-right: 5px;
 }
 
 .edit {
@@ -159,16 +169,28 @@ tr:hover {
 
     <!-- Header -->
     <div class="header">
-        <h1>User Management System</h1>
-        <a href="Login.jsp" class="logout">Logout</a>
+        <h1>
+            <i class="fa-solid fa-users"></i>
+            User Management System
+        </h1>
+
+        <a href="Login.jsp" class="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </a>
     </div>
 
     <!-- Main Content -->
     <div class="container">
 
-        <h2>Admin Dashboard</h2>
+        <h2>
+            <i class="fa-solid fa-gauge-high"></i>
+            Admin Dashboard
+        </h2>
 
-        <p class="subtitle">Manage and view all registered users.</p>
+        <p class="subtitle">
+            Manage and view all registered users.
+        </p>
 
         <div class="table-container">
 
@@ -190,6 +212,7 @@ tr:hover {
                         (List<User>) request.getAttribute("allUser");
 
                     if (users != null && !users.isEmpty()) {
+
                         for (User user : users) {
                 %>
 
@@ -201,16 +224,23 @@ tr:hover {
                     <td><%=user.getAge()%></td>
                     <td><%=user.getUsername()%></td>
 
+                    <!-- Edit Button -->
                     <td>
                         <a href="edit?id=<%=user.getId()%>"
-                           class="btn edit">Edit</a>
+                           class="btn edit">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            Edit
+                        </a>
                     </td>
 
+                    <!-- Delete Button -->
                     <td>
                         <a href="delete?id=<%=user.getId()%>"
                            class="btn delete"
                            onclick="return confirm('Are you sure you want to delete this user?');">
-                           Delete
+
+                            <i class="fa-solid fa-trash"></i>
+                            Delete
                         </a>
                     </td>
                 </tr>
